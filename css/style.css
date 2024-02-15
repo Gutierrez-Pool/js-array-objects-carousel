@@ -6,7 +6,7 @@
 }
 
 .container {
-    max-width: 600px;
+    max-width: 1000px;
     margin: 0 auto;
 
     margin-top: 300px;
@@ -16,12 +16,34 @@
 #slider {
     position: relative;
 
-    height: 400px;
+    height: 600px;
 
-    border: 6px solid gray;
+    border: 2px solid gray;
     border-radius: 24px;
 
     overflow: hidden;
+}
+
+#slider .slide {
+    position: relative;
+
+    height: 100%;
+}
+
+#slider .slide:not(.active) {
+    display: none;
+}
+
+
+#slider .details {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    text-align: end;
+
+    color: white;
+    padding: 20px;
 }
 
 #slider img {
@@ -31,15 +53,13 @@
     object-fit: cover;
 }
 
-#slider img:not(.active) {
-    display: none;
-}
 
 #slider #arrows {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
+    z-index: 1;
 
     position: absolute;
     top: 0;
